@@ -1,2 +1,2 @@
 # Photoshare
-Small instagram 
+Small instagram webpage
