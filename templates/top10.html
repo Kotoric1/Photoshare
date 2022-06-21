@@ -1,0 +1,12 @@
+
+<h2>Top 10 tags</h2>  
+    <ul>
+    {% for tag in range(10) %}
+    <li><a href= "/show_tag_photos/{{ tags[tag] }}" > {{ tags[tag] }}  </a> <br>
+    </li>
+    
+
+    {% endfor %}
+    </ul>
+<br><a href='/'>Home</a>
+<br><a href='/search_tags'>View all tags</a>

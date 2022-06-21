@@ -1,0 +1,60 @@
+<head>
+    <title>Here is the Photo</title>
+</head>
+
+<ul>
+    {% for photo in photo_info %}
+        
+        <h2>This is the Photo: </h2>  
+       <h3>Caption: {{photo[2]}}</h3>
+        <img src='data:image/jpg;base64, {{ base64.b64encode(photo[0]).decode("ascii") }}'width="200" height="121"/>
+               
+
+        <div id="content">
+
+            <form method="post" action="/displayphoto/{{ photo[1]}}"> 
+        
+            <br><input type="submit" name = "submit_button" value="Like" />
+            </form>
+        </div> 
+
+        <div id="content">
+           
+            <form method="POST" action="/displayphoto/{{ photo[1] }}">
+                <label for="comment">Type Comment Here: {{ photo[1] }} </label>
+                <input type="text" name="comment" /><br />
+                <br><input type="submit" name="submit_button" value="Create" />
+            </form>
+        </div>
+
+        {% endfor %}
+    </ul>
+
+       
+
+               
+<h2>Here are current comments</h2>
+    <ul>
+    {% for comment in comments %}
+
+        <li>Comment:  {{ comment[1] }} <br>
+            <body> From User: {{ comment[0] }}</body>
+        </li>
+   
+    </ul>
+    {% endfor %}
+
+<h4> The Number of likes is: {{ num_likes }}</h4>
+<h5> These users liked the photo: </h5>
+<ul>
+    {% for user in user_like_list %}
+
+        <li>User:  {{ user }} <br>
+        </li>
+        {% endfor %}
+    </ul>
+    
+
+ 
+
+    <a href='/'>Home</a>

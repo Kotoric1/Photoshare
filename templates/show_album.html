@@ -1,0 +1,11 @@
+
+<h2>Here are all albums</h2> 
+    <ul>
+    {% for album in albums %}
+    <li><a href= "/show_album_photo/{{ album }}" > {{ album }}  </a> <br>
+    </li>
+    
+    {% endfor %}
+    </ul>
+<a href='/'>Home</a>
+<br><a href='/show_my_album'>View my albums</a>

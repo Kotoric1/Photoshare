@@ -1,0 +1,56 @@
+
+<!doctype html>
+
+<title>Friends</title>
+<body>
+
+    
+        <div class="title">
+            <h1>Add Friends </h1>
+        </div>
+        <div id="content">
+            <form method="post" action="/friend">
+                <label for="friend_email">Enter Friend's Email:</label>
+                <input type="text" name="friend_email" required='true' /><br />
+                <input type="submit" value="Add" />
+            </form>
+        </div>
+    
+
+
+<h1>Friend list: </h1>
+<ul>
+    {% for friend in friends_emails %}
+
+        <li>{{ friend }} 
+        </li>
+    {% endfor %}
+    </ul>
+
+    {% if recommendation %}
+    <h2>These are recomendend friends: </h2>
+    <ul>
+        {% for user in recommendation %}
+    
+            <li>{{ user }} 
+            </li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+
+
+    <h1>Friend Recommendation : </h1>
+    <ul>
+       {% for user in user_emails %}
+               <li>{{ user }} 
+               </li>
+       {% endfor %}
+       </ul>
+   
+
+
+</body>
+
+
+<br><li><a href='/'>Home</a></li>
+<br><li><a href='/profile'>Profile</a></li>

@@ -1,0 +1,15 @@
+<h2>Here are all photos</h2>
+    <ul>
+    {%for user in AllPhotos %}
+        {% for photo in user %}
+
+            <li>{{photo[2]}}<br>
+            <a href= "/displayphoto/{{ photo[1] }}" > {{ photo[1] }}  </a>
+            <img src='data:image/jpg;base64, {{ base64.b64encode(photo[0]).decode("ascii") }}' width="200" height="121"/></li>
+            
+        {% endfor %}
+    {% endfor %}
+    </ul>
+    
+<br><a href='/'>Home</a>
+<br><a href='/show_myphotos'>View my photos</a>

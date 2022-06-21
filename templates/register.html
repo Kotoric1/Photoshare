@@ -1,0 +1,36 @@
+<head>
+    <title>Create an account!</title>
+</head>
+{%if not supress%}
+<h1> Email already in use! </h1>
+{% endif %}
+
+<body>
+    <div class="title">
+        <h1>Enter your personal information</h1>
+    </div>
+    <div id="content">
+        <form method="post" action="{{ url_for('register_user') }}">
+
+                <label for="email">Enter your Email (required):</label>
+                <input type="email" name="email" required='true' /><br />
+                <label for="password">Enter Password (required):</label>
+                <input type="password" name="password" required='true'/><br />
+                <label for="first_name">Enter First name (required):</label>
+                <input type="text" name="first_name" required='true' /><br />
+                <label for="last_name">Enter Last name (required):</label>
+                <input type="text" name="last_name" required='true' /><br />
+                <label for="birthday">Enter your Birthday (required):</label>
+                <input type="date" id="birthday" name="birthday" required='true' > <br />
+
+                <label for="hometown">Enter Hometown (optional):</label>
+                <input type="text" name="hometown" /><br />
+                <label for="gender">Enter Gender (optional):</label>
+                <input type="text" name="gender" /><br />
+
+                <input type="submit"  value="Create"/>
+        </form>
+    </div>
+</body>
+
+<a href='/'>Home</a>

@@ -1,0 +1,39 @@
+
+<!doctype html>
+{% if message %}
+  <h4>{{message}}!</h4>
+{% endif %}
+
+<title>Photoshare</title>
+
+{% if name %}
+  <h1>Welcome {{ name }}!</h1>
+{% endif %}
+
+{% if photos %}
+<h2>Here are your photos</h2>
+    <ul>
+    {% for photo in photos %}
+
+        <li>{{photo[2]}}<br>
+        <img src='data:image/jpg;base64, {{ base64.b64encode(photo[0]).decode("ascii") }}' width="250" height="200"/></li>
+    {% endfor %}
+    </ul>
+    
+{% endif %}
+
+{% if message is none %}
+  <p>You should <a href='/login'>login!</a></p>
+{% endif %}
+
+
+<li><a href='/friend'> Friends </a> </li>
+<li><a href='/album'>Albums</a> </li>
+<li><a href='/upload'>Upload photos</a> </li>
+
+<li><a href='/show_my_album'>View My Albums </a> </li>
+<li><a href='/show_myphotos'>View My Photos</a> </li>
+<li><a href='/search_mytags'>View My tags </a> </li>
+<li><a href='/recommend'> You Might Also Like:</a> </li>
+<li><a href='/logout'>Logout</a></li>
+<li><a href='/'>Home</a></li>

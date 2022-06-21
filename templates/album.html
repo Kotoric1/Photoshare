@@ -1,0 +1,40 @@
+{% if message %}
+  <h4>{{message}}!</h4>
+{% endif %}
+
+<head>
+    <title>Create an Album!</title>
+</head>
+    <body>
+    <div class="title">
+            <h1>Create an Album!</h1>
+    </div>
+    <div id="content">
+        <form method="post" action="/album">
+            <label for="album_name">Please enter the album name:</label>
+            <input type="text" name="album_name" required='true' /><br />
+            <button name="1" type="submit" value="Create">Create</button>
+
+            <h2>Here are all your albums</h2>
+                <ul>
+                {% for album in albums %}
+                    <li>{{ album }}</li>
+                {% endfor %}
+                </ul>    
+        </form>
+    </div>
+    </body>
+
+
+<div id="content">
+    <h3>Delete an Album </h3>
+    <form method="post" action="/album">
+        <label for="album_delete">Please enter the album name :</label>
+        <input type="text" name="album_delete" /><br />
+        <button name="2" type="submit" value="Delete">Delete</button>
+    </form>
+</div>
+
+
+<br><a href='/'>Home</a>
+<br><a href='/profile'>Profile</a>

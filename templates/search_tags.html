@@ -1,0 +1,12 @@
+
+<h2>Here are all tags</h2> 
+    <ul>
+    {% for tag in tags %}
+    <li><a href= "/show_tag_photos/{{ tag }}" > {{ tag }}  </a> <br>
+    </li>
+    
+
+    {% endfor %}
+    </ul>
+<br><a href='/'>Home</a>
+<br><a href='/search_mytags'>View my tags</a>
