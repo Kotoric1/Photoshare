@@ -1,2 +1,2 @@
 # Photoshare
-Small instagram webpage
+Small instagram webpage desgined by using python, flask, and mySQL.
